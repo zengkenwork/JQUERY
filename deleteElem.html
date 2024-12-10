@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="myDiv">這是一個要刪除的 div 元素</div>
+    <ul id="myUl">
+      <li>第一項</li>
+      <li>第二項</li>
+      <li>第三項</li>
+    </ul>
+    <button id="myButton">刪除元素</button>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#myButton").on("click", function () {
+          $("#myDiv").remove();
+          $("#myUl li:eq(1)").remove();
+        });
+      });
+    </script>
+  </body>
+</html>
