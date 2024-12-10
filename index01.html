@@ -14,13 +14,16 @@
     <script>
       function init() {
         let btn = $("btn");
-        console.log * brn;
+        console.log(btn);
       }
 
       $("#btn").click(function () {
-        $("#container").hide();
         $("#textEmail").val("Ken@gmail.com");
+        let html = $("#container").html();
+        console.log("p 的innerHtml", html);
       });
+
+      $(document).ready(init);
     </script>
   </body>
 </html>
