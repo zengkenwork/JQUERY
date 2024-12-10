@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      性別 : <br />
+      <input type="radio" name="gender" value="1" />男<br />
+      <input type="radio" name="gender" value="0" />女<br />
+
+      興趣 : <br />
+      <input type="checkbox" name="hobby" value="1" />看書<br />
+      <input type="checkbox" name="hobby" value="2" />打球<br />
+      <input type="checkbox" name="hobby" value="3" />旅行<br />
+      <input type="checkbox" name="hobby" value="4" />聽音樂<br />
+      <input type="button" id="btn" value="Save" />
+    </form>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+      $("#btn").click(function () {
+        var gender = $("input[name='gender']:checked").val();
+        if (!gender) {
+          console.log("沒有選擇性別");
+        } else {
+          console.log("gender", gender);
+        }
+
+        let hobbies = [];
+        $("input[name='hobby']:checked").each(function () {
+          let value = $(this).val();
+          hobbies.push(value);
+        });
+        console.log("hobbies", hobbies);
+
+        console.log("form", $("form").serializeArray());
+      });
+    </script>
+  </body>
+</html>
