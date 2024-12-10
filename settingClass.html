@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      .redText {
+        color: red;
+      }
+      .highlight {
+        background-color: yellow;
+        font-weight: bold;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myElement">我是一個範例元素！</div>
+    <button id="addClassButton">點擊為元素添加CSS類別</button>
+    <button id="removeClassButton">點擊為元素刪除CSS類別</button>
+    <button id="toggleClassButton">點擊為元素切換CSS類別</button>
+
+    <div id="myElement2">div content</div>
+    <input type="button" id="btn1" value="增加一個style" />
+    <input type="button" id="btn2" value="增加多個style" />
+    <input type="button" id="btn3" value="移除color style" />
+    <input type="button" id="btn4" value="移除全部style" />
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#addClassButton").on("click", function () {
+          $("#myElement").addClass("redText");
+        });
+        $("#removeClassButton").on("click", function () {
+          $("#myElement").removeClass("highlight"); //移除指定class
+          //$("#myElement").removeClass(); 移除全部class
+        });
+        $("#toggleClassButton").on("click", function () {
+          $("#myElement").toggleClass("highlight");
+        });
+
+        $("#btn1").on("click", function () {
+          $("#myElement2").css("border", "1px solid #999");
+        });
+
+        // 若要改多個 style,用物件, style名稱有 - 的,取消它, 改用大寫,
+        // 例如 background-color 改成 backgroundColor
+        $("#btn2").on("click", function () {
+          $("#myElement2").css({
+            marginBottom: "20px",
+            fontSize: "20px",
+            textDecoration: "underline",
+            color: "red",
+            padding: "10px",
+          });
+        });
+
+        $("#btn3").on("click", function () {
+          $("#myElement2").css("color", "");
+        });
+
+        $("#btn4").on("click", function () {
+          $("#myElement2").removeAttr("style");
+        });
+      });
+    </script>
+  </body>
+</html>
