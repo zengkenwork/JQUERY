@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="cityId">
+      <option value="">請選擇...</option>
+    </select>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+      let cities = [
+        { id: 1, name: "台北" },
+        { id: 2, name: "台中" },
+        { id: 3, name: "台南" },
+      ];
+
+      addOption("cityId", cities);
+
+      function addOption(selectId, options) {
+        let ddl = $("#" + selectId);
+        options.forEach((city) => {
+          $("<option>").prop("value", city.id).text(city.name).appendTo(ddl);
+        });
+      }
+    </script>
+  </body>
+</html>
