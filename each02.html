@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      #container {
+        border: 1px solid #ccc;
+        height: 160px;
+        width: 500px;
+      }
+
+      #container div {
+        width: 30px;
+        height: 30px;
+        background-color: #ccc;
+        margin: 10px;
+        padding: 20px;
+        float: left;
+        text-align: center;
+      }
+
+      .info {
+        clear: both;
+        padding: 10px;
+        margin: 10px;
+        height: 30px;
+        width: 80%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>一次針對多個節點註冊事件</h1>
+    <div id="container">
+      <div data-price="100" data-enabled="true" data-id="Allen">A</div>
+      <div data-id="Bee">B</div>
+      <div data-id="Cup">C</div>
+      <div data-id="Desk">D</div>
+    </div>
+    <div class="info"></div>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#container div").click(function () {
+          let node = $(this);
+          let message = "您選取的是 : " + node.data("id");
+          $(".info").text(message);
+        });
+      });
+    </script>
+  </body>
+</html>
