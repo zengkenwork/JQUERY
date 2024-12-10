@@ -7,14 +7,14 @@
     <title></title>
   </head>
   <body>
-    <button>Hide 段落文字</button>
-    <p>Hello world</p>
+    <button id="btn">Hide 段落文字</button>
+    <p id="container">Hello world</p>
     <script src="js/jquery-3.7.1.js"></script>
     <script>
       $(document).ready(function () {
-        $("button").click(function () {
+        $("#btn").click(function () {
           console.log("click");
-          $("p").hide();
+          $("#container").hide();
         });
       });
     </script>
