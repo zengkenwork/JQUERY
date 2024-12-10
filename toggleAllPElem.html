@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <p>這是第一個段落。</p>
+    <p>這是第二個段落。</p>
+    <p>這是第三個段落。</p>
+    <button id="toggleButton">點擊切換段落顯示</button>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#toggleButton").on("click", function () {
+          $("p").toggle();
+        });
+      });
+    </script>
+  </body>
+</html>
